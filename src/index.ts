@@ -15,7 +15,7 @@ export const defaultOptions = {
 export function useSpinDelay(
   loading: boolean,
   options?: SpinDelayOptions,
-): [boolean] {
+): boolean {
   options = Object.assign({}, defaultOptions, options);
 
   const [state, setState] = useState<State>('IDLE');
@@ -47,7 +47,7 @@ export function useSpinDelay(
     }
   }, [loading, state, options.delay, options.minDuration]);
 
-  return [state === 'DISPLAY' || state === 'EXPIRE'];
+  return state === 'DISPLAY' || state === 'EXPIRE';
 }
 
 export default useSpinDelay;
