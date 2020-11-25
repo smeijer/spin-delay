@@ -1,0 +1,56 @@
+{
+  "name": "spin-delay",
+  "version": "0.0.1",
+  "description": "",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "license": "MIT",
+  "author": "Stephan Meijer <stephan@meijer.ws>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smeijer/spin-delay.git"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "rimraf ./dist && microbundle -i src/index.ts -o dist/index.js --no-pkg-main -f umd --target node",
+    "watch": "rimraf ./dist && microbundle -i src/index.ts -o dist/index.js --no-pkg-main -f umd --sourcemap true --compress false --target node --watch --raw",
+    "prettier": "prettier . --write",
+    "bump:patch": "npm version patch -m 'release: cut the %s release'",
+    "bump:minor": "npm version minor -m 'release: cut the %s release'",
+    "bump:major": "npm version major -m 'release: cut the %s release'",
+    "preversion": "npm run test && npm run build",
+    "postversion": "git push && git push --tags && npm publish"
+  },
+  "files": [
+    "docs",
+    "dist",
+    "types"
+  ],
+  "keywords": [
+    "react",
+    "loader",
+    "suspense",
+    "delay",
+    "flicker"
+  ],
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@testing-library/react": "^11.2.2",
+    "@types/react": "^17.0.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "microbundle": "^0.12.4",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "regenerator-runtime": "^0.13.7",
+    "rimraf": "^3.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1"
+  }
+}
