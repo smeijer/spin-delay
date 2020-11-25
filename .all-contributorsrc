@@ -19,10 +19,10 @@
         "ideas",
         "code",
         "infra",
-        "maintenance"
+        "maintenance",
+        "test"
       ]
-    },
+    }
   ],
-  "contributorsPerLine": 7,
-  "skipCi": true
+  "contributorsPerLine": 7
 }
