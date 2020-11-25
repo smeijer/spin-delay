@@ -1,9 +1,42 @@
 import 'regenerator-runtime';
 import React, { useState, useEffect } from 'react';
-import { render } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import { useSpinDelay } from './index';
 
-async function setup({ networkTime, delay, minDuration }) {
+it('does not show spinner when faster than delay', () => {
+  setup({ networkTime: 100, delay: 200 });
+  assertLoadingAndSpinnerAtTime(true, false, 0);
+  assertLoadingAndSpinnerAtTime(false, false, 100);
+});
+
+it('shows spinner when slower than delay', () => {
+  setup({ networkTime: 300, delay: 200 });
+  assertLoadingAndSpinnerAtTime(true, false, 0);
+
+  assertLoadingAndSpinnerAtTime(true, false, 199);
+  assertLoadingAndSpinnerAtTime(true, true, 200);
+
+  assertLoadingAndSpinnerAtTime(true, true, 299);
+  assertLoadingAndSpinnerAtTime(false, false, 300);
+});
+
+it('shows spinner for minDuration', () => {
+  setup({ networkTime: 300, delay: 200, minDuration: 200 });
+  assertLoadingAndSpinnerAtTime(true, false, 0);
+
+  assertLoadingAndSpinnerAtTime(true, false, 199);
+  assertLoadingAndSpinnerAtTime(true, true, 200);
+
+  assertLoadingAndSpinnerAtTime(true, true, 299);
+  assertLoadingAndSpinnerAtTime(false, true, 300);
+
+  assertLoadingAndSpinnerAtTime(false, true, 399);
+  assertLoadingAndSpinnerAtTime(false, false, 401);
+});
+
+// utility functions:
+
+function setup({ networkTime, delay, minDuration }) {
   function TestComponent({ networkTime, delay, minDuration }) {
     const [loading, setLoading] = useState(true);
     const [showSpinner] = useSpinDelay(loading, { delay, minDuration });
@@ -12,7 +45,7 @@ async function setup({ networkTime, delay, minDuration }) {
       setTimeout(() => setLoading(false), networkTime);
     }, [networkTime]);
 
-    return showSpinner.toString();
+    return JSON.stringify({ loading, showSpinner });
   }
 
   render(
@@ -24,12 +57,23 @@ async function setup({ networkTime, delay, minDuration }) {
   );
 }
 
-// TODO: needs to be implemented
-test('does not show spinner when returning before delay', async () => {
-  setup({ networkTime: 100, delay: 200 });
+let currentTime;
+function advanceTimersTo(time) {
+  act(() => jest.advanceTimersByTime(time - currentTime));
+  currentTime = time;
+}
+
+function assertLoadingAndSpinnerAtTime(loading, showSpinner, time) {
+  advanceTimersTo(time);
+  screen.getByText(JSON.stringify({ loading, showSpinner }));
+}
+
+beforeEach(() => {
+  jest.useFakeTimers();
+  currentTime = 0;
 });
 
-// TODO: needs to be implemented
-test('does show spinner when returning after delay', () => {
-  setup({ networkTime: 600, delay: 200 });
+afterEach(() => {
+  jest.runOnlyPendingTimers();
+  jest.useRealTimers();
 });
