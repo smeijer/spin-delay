@@ -9,5 +9,5 @@ export declare const defaultOptions: {
 export declare function useSpinDelay(
   loading: boolean,
   options?: SpinDelayOptions,
-): [boolean];
+): boolean;
 export default useSpinDelay;
