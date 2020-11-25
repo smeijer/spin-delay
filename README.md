@@ -39,7 +39,7 @@ function MyComponent() {
   const [{ loading }] = useFetch('http://example.com');
 
   // options are optional, and default to these values
-  const [showSpinner] = useSpinDelay(loading, { delay: 500, minDuration: 200 });
+  const showSpinner = useSpinDelay(loading, { delay: 500, minDuration: 200 });
 
   if (showSpinner) {
     return <Spinner />;
