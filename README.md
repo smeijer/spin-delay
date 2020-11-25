@@ -8,7 +8,19 @@
 
 **Smart Spinner Helper for React**
 
-<!-- description -->
+![demo animation of spin-delay](./docs/spin-delay.gif)
+
+There are a few annoyances when working with spinners. Network request can be so
+fast that rendering a spinner does more harm than good. Why render a spinner
+when loading the data only takes like 50ms?
+
+This can be fixed by adding a delay. Only show the spinner when the request takes
+longer than 200ms for example. And what happens when te request takes 210ms? Right,
+we see a spinner for 10ms. This flicker can be annoying.
+
+`spin-delay` solves these issues by wrapping your booleans, and only returning
+true after the `delay`, and for a minimum time of `minDuration`. This way
+you're sure that you don't show unnecessary or very short living spinners.
 
 ## Demo
 
