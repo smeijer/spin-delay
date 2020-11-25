@@ -10,6 +10,10 @@
 
 <!-- description -->
 
+## Demo
+
+Sandbox -> https://codesandbox.io/s/spin-delay-jlp2c
+
 ## Installation
 
 With npm:
