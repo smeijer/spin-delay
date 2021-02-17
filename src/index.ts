@@ -26,16 +26,15 @@ export function useSpinDelay(
       clearTimeout(timeout.current);
 
       timeout.current = setTimeout(() => {
-        if (loading) {
-          timeout.current = setTimeout(
-            () => setState('EXPIRE'),
-            options.minDuration,
-          );
-
-          setState('DISPLAY');
-        } else {
-          setState('IDLE');
+        if (!loading) {
+          return setState('IDLE');
         }
+
+        timeout.current = setTimeout(() => {
+          setState('EXPIRE');
+        }, options.minDuration);
+
+        setState('DISPLAY');
       }, options.delay);
 
       setState('DELAY');
@@ -46,6 +45,10 @@ export function useSpinDelay(
       setState('IDLE');
     }
   }, [loading, state, options.delay, options.minDuration]);
+
+  useEffect(() => {
+    return () => clearTimeout(timeout.current);
+  }, []);
 
   return state === 'DISPLAY' || state === 'EXPIRE';
 }
