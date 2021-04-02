@@ -1,7 +1,7 @@
 {
   "name": "spin-delay",
   "version": "1.1.0",
-  "description": "",
+  "description": "Smart spinner helper for React, to manage the duration of loading states.",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -31,8 +31,7 @@
     "react",
     "loader",
     "suspense",
-    "delay",
-    "flicker"
+    "delay"
   ],
   "devDependencies": {
     "@babel/preset-env": "^7.12.7",
