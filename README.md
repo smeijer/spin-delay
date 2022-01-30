@@ -37,7 +37,7 @@ npm install --save spin-delay
 With yarn:
 
 ```sh
-yarn add -D spin-delay
+yarn add spin-delay
 ```
 
 ## API
