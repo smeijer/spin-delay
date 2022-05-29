@@ -41,6 +41,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "supachaidev",
+      "name": "Supachai Dev",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88824768?v=4",
+      "profile": "https://github.com/supachaidev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
