@@ -32,6 +32,15 @@
         "ideas",
         "test"
       ]
+    },
+    {
+      "login": "erichosick",
+      "name": "Eric Hosick",
+      "avatar_url": "https://avatars.githubusercontent.com/u/295228?v=4",
+      "profile": "http://www.erichosick.com/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
