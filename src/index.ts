@@ -12,12 +12,23 @@ export const defaultOptions = {
   minDuration: 200,
 };
 
+function useIsServer() {
+  const [isServer, setIsServer] = useState(true);
+  
+  useEffect(() => {
+    setIsServer(false);
+  }, []);
+
+  return isServer;
+}
+
 export function useSpinDelay(
   loading: boolean,
   options?: SpinDelayOptions,
 ): boolean {
   options = Object.assign({}, defaultOptions, options);
 
+  const isServer = useIsServer();
   const [state, setState] = useState<State>('IDLE');
   const timeout = useRef(null);
 
@@ -49,6 +60,10 @@ export function useSpinDelay(
   useEffect(() => {
     return () => clearTimeout(timeout.current);
   }, []);
+
+  if (isServer) {
+    return loading;
+  }
 
   return state === 'DISPLAY' || state === 'EXPIRE';
 }
