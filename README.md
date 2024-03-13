@@ -2,7 +2,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -76,6 +76,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="http://www.erichosick.com/"><img src="https://avatars.githubusercontent.com/u/295228?v=4?s=100" width="100px;" alt="Eric Hosick"/><br /><sub><b>Eric Hosick</b></sub></a><br /><a href="https://github.com/smeijer/spin-delay/commits?author=erichosick" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/supachaidev"><img src="https://avatars.githubusercontent.com/u/88824768?v=4?s=100" width="100px;" alt="Supachai Dev"/><br /><sub><b>Supachai Dev</b></sub></a><br /><a href="https://github.com/smeijer/spin-delay/commits?author=supachaidev" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://kentcdodds.com/"><img src="https://avatars.githubusercontent.com/u/1500684?v=4?s=100" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="https://github.com/smeijer/spin-delay/commits?author=kentcdodds" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/chucamphong"><img src="https://avatars.githubusercontent.com/u/58473133?v=4?s=100" width="100px;" alt="Phong Chu"/><br /><sub><b>Phong Chu</b></sub></a><br /><a href="https://github.com/smeijer/spin-delay/commits?author=chucamphong" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
