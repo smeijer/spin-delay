@@ -25,4 +25,3 @@ export declare function useSpinDelay(
   loading: boolean,
   options?: SpinDelayOptions,
 ): boolean;
-export {};

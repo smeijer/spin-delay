@@ -52,20 +52,18 @@ export function useSpinDelay(
     if (loading && (state === 'IDLE' || isSSR)) {
       clearTimeout(timeout.current);
 
-      timeout.current = setTimeout(
-        () => {
-          if (!loading) {
-            return setState('IDLE');
-          }
+      const delay = isSSR ? 0 : options.delay;
+      timeout.current = setTimeout(() => {
+        if (!loading) {
+          return setState('IDLE');
+        }
 
-          timeout.current = setTimeout(() => {
-            setState('EXPIRE');
-          }, options.minDuration);
+        timeout.current = setTimeout(() => {
+          setState('EXPIRE');
+        }, options.minDuration);
 
-          setState('DISPLAY');
-        },
-        isSSR ? 0 : options.delay,
-      );
+        setState('DISPLAY');
+      }, delay);
 
       if (!isSSR) {
         setState('DELAY');
