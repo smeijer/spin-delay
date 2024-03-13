@@ -16,11 +16,9 @@
     "build": "rimraf ./dist && microbundle -i src/index.ts -o dist/index.js --no-pkg-main -f umd --target node",
     "watch": "rimraf ./dist && microbundle -i src/index.ts -o dist/index.js --no-pkg-main -f umd --sourcemap true --compress false --target node --watch --raw",
     "prettier": "prettier . --write",
-    "bump:patch": "npm version patch -m 'release: cut the %s release'",
-    "bump:minor": "npm version minor -m 'release: cut the %s release'",
-    "bump:major": "npm version major -m 'release: cut the %s release'",
-    "preversion": "npm run test && npm run build",
-    "postversion": "git push && git push --tags && npm publish"
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:release": "npm run build && prettier --write 'CHANGELOG.md' '.changeset/*.json' && changeset publish"
   },
   "files": [
     "docs",
@@ -37,6 +35,8 @@
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
     "@babel/preset-typescript": "^7.12.7",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
     "@testing-library/react": "^11.2.2",
     "@types/react": "^17.0.0",
     "husky": "^4.3.0",
