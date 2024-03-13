@@ -52,5 +52,3 @@ export function useSpinDelay(
 
   return state === 'DISPLAY' || state === 'EXPIRE';
 }
-
-export default useSpinDelay;
