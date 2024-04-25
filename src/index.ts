@@ -43,8 +43,8 @@ export function useSpinDelay(
 ): boolean {
   options = Object.assign({}, defaultOptions, options);
 
-  const isSSR = useIsSSR();
-  const initialState = options.ssr && isSSR && loading ? 'DISPLAY' : 'IDLE';
+  const isSSR = useIsSSR() && options.ssr;
+  const initialState = isSSR && loading ? 'DISPLAY' : 'IDLE';
   const [state, setState] = useState<State>(initialState);
   const timeout = useRef(null);
 
@@ -74,7 +74,7 @@ export function useSpinDelay(
       clearTimeout(timeout.current);
       setState('IDLE');
     }
-  }, [loading, state, options.delay, options.minDuration]);
+  }, [loading, state, options.delay, options.minDuration, isSSR]);
 
   useEffect(() => {
     return () => clearTimeout(timeout.current);
