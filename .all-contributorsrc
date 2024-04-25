@@ -3,7 +3,9 @@
   "projectOwner": "smeijer",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "imageSize": 100,
   "commit": true,
   "commitConvention": "angular",
@@ -13,44 +15,70 @@
       "name": "Stephan Meijer",
       "avatar_url": "https://avatars1.githubusercontent.com/u/1196524?v=4",
       "profile": "https://github.com/smeijer",
-      "contributions": ["ideas", "code", "infra", "maintenance", "test"]
+      "contributions": [
+        "ideas",
+        "code",
+        "infra",
+        "maintenance",
+        "test"
+      ]
     },
     {
       "login": "Aprillion",
       "name": "Peter Hozák",
       "avatar_url": "https://avatars0.githubusercontent.com/u/1087670?v=4",
       "profile": "http://peter.hozak.info/",
-      "contributions": ["ideas", "test"]
+      "contributions": [
+        "ideas",
+        "test"
+      ]
     },
     {
       "login": "erichosick",
       "name": "Eric Hosick",
       "avatar_url": "https://avatars.githubusercontent.com/u/295228?v=4",
       "profile": "http://www.erichosick.com/",
-      "contributions": ["doc"]
+      "contributions": [
+        "doc"
+      ]
     },
     {
       "login": "supachaidev",
       "name": "Supachai Dev",
       "avatar_url": "https://avatars.githubusercontent.com/u/88824768?v=4",
       "profile": "https://github.com/supachaidev",
-      "contributions": ["code"]
+      "contributions": [
+        "code"
+      ]
     },
     {
       "login": "kentcdodds",
       "name": "Kent C. Dodds",
       "avatar_url": "https://avatars.githubusercontent.com/u/1500684?v=4",
       "profile": "https://kentcdodds.com/",
-      "contributions": ["code"]
+      "contributions": [
+        "code"
+      ]
     },
     {
       "login": "chucamphong",
       "name": "Phong Chu",
       "avatar_url": "https://avatars.githubusercontent.com/u/58473133?v=4",
       "profile": "https://github.com/chucamphong",
-      "contributions": ["code"]
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "joeporpeglia",
+      "name": "Joe Porpeglia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1399969?v=4",
+      "profile": "https://github.com/joeporpeglia",
+      "contributions": [
+        "code"
+      ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "commitType": "docs"
 }
-
