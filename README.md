@@ -13,7 +13,7 @@ fast that rendering a spinner does more harm than good. Why render a spinner
 when loading the data only takes like 50ms?
 
 This can be fixed by adding a delay. Only show the spinner when the request takes
-longer than 200ms for example. And what happens when te request takes 210ms? Right,
+longer than 200ms for example. And what happens when the request takes 210ms? Right,
 we see a spinner for 10ms. This flicker can be annoying.
 
 `spin-delay` solves these issues by wrapping your booleans, and only returning
