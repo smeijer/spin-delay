@@ -1,6 +1,6 @@
 {
   "name": "spin-delay",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Smart spinner helper for React, to manage the duration of loading states.",
   "source": "src/index.ts",
   "main": "dist/index.js",

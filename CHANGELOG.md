@@ -1,5 +1,11 @@
 # spin-delay
 
+## 2.0.1
+
+### Patch Changes
+
+- [`f380792`](https://github.com/smeijer/spin-delay/commit/f380792a23c4331c4e389ebeeca03945a49c4848) Thanks [@smeijer](https://github.com/smeijer)! - Fixes the initial delay used when `options.ssr` is `false`.
+
 ## 2.0.0
 
 ### Major Changes
