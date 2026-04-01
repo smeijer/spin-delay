@@ -39,7 +39,11 @@ it('shows spinner for minDuration', () => {
 function setup({ networkTime, delay, minDuration }) {
   function TestComponent({ networkTime, delay, minDuration }) {
     const [loading, setLoading] = useState(true);
-    const showSpinner = useSpinDelay(loading, { delay, minDuration });
+    const showSpinner = useSpinDelay(loading, {
+      delay,
+      minDuration,
+      ssr: false,
+    });
 
     useEffect(() => {
       setTimeout(() => setLoading(false), networkTime);
